@@ -7,7 +7,9 @@ const PolygonLookup = require('polygon-lookup')
 
 // max distance (in meters) from a point of OpenAddresses file for street to be given
 // if that distance exceeds, use Nominatim
-const distanceInMetersThreshold = 10
+// raised from 10 to 200 to resolve CP for approximate property coordinates (geocoded/centroid)
+// from the local address dataset instead of falling back to the external Nominatim service
+const distanceInMetersThreshold = 200
 
 // modules
 const utilsDir = path.join(appRoot.path, 'src', 'server', 'utils')
